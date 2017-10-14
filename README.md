@@ -1,3 +1,3 @@
-# wp-docker-theme
+# WP Base theme
 
-My WordPress theme base
+> OneDev studio - WordPress base theme
