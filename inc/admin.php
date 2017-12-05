@@ -16,6 +16,31 @@ function theme_admin_add_editor_styles() {
 }
 add_action( 'after_setup_theme', 'theme_admin_add_editor_styles' );
 
+
+add_action( 'admin_bar_menu', 'add_toolbar_items', 1 );
+function add_toolbar_items( $admin_bar ) {
+    $admin_bar->add_menu( array(
+        'id' => 'workshopMenu',
+        'title' => 'Workshop',
+        'href' => 'http://workshop.curitiba.br/',
+        'meta' => array(
+            'title' => __('Workshop'),
+            'target' => '_blank',
+            'class' => 'workshop-icon'
+        )
+    ));
+    $admin_bar->add_menu( array(
+        'id' => 'viewSiteMenu',
+        'parent' => 'workshopMenu',
+        'title' => 'Visitar site',
+        'href' => get_home_url( '/' ),
+        'meta' => array(
+            'title' => __('Visitar site'),
+            'target' => '_blank'
+        )
+    ));
+}
+
 /**
  * Custom Footer.
  */
